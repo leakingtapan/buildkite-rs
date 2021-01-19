@@ -11,8 +11,8 @@ pub struct GetOrganization {
 }
 
 impl GetOrganization {
-    pub fn run(&self, client: &buildkite::Client) {
-        let organization = client.get_organizatoin(self.organization.as_str());
+    pub fn run(&self, client: &buildkite::client::Client) {
+        let organization = client.organization().get_organizatoin(self.organization.as_str());
         writer::print_json(&organization);
     }
 }

@@ -37,7 +37,7 @@ enum SubCommand {
 }
 
 impl SubCommand {
-    fn run(&self, client: &buildkite::Client) {
+    fn run(&self, client: &buildkite::client::Client) {
         match self {
             SubCommand::ListPipelines(c) => c.run(&client),
             SubCommand::UpdatePipeline(_) => {}
@@ -51,7 +51,7 @@ impl SubCommand {
 
 fn main() {
     let opts = Opts::parse();
-    let client = buildkite::Client::new(opts.token.as_str());
+    let client = buildkite::client::Client::new(opts.token.as_str());
 
     opts.subcmd.run(&client);
 }

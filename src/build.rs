@@ -15,8 +15,8 @@ pub struct ListBuilds {
 }
 
 impl ListBuilds {
-    pub fn run(&self, client: &buildkite::Client) {
-        let builds = client.list_builds(self.organization.as_str(), self.pipeline.as_str());
+    pub fn run(&self, client: &buildkite::client::Client) {
+        let builds = client.build().list_builds(self.organization.as_str(), self.pipeline.as_str());
         writer::print_json(&builds);
     }
 }

@@ -1,22 +1,21 @@
 use crate::buildkite::types::{Agent, Result};
-use crate::buildkite::Client;
+use crate::buildkite::http::HttpClient;
+use crate::buildkite::http;
 
 pub struct AgentService<'a> {
-    client: &'a Client,
-
-    organization: &'a str,
+    pub client: &'a HttpClient,
 }
 
 impl<'a> AgentService<'a> {
-    pub fn new(client: &'a Client, organization: &'a str) -> AgentService<'a> {
+    pub fn new(client: &'a HttpClient) -> AgentService<'a> {
         AgentService {
             client: client,
-            organization: organization,
         }
     }
-    pub fn list(&self) -> Result<Vec<Agent>> {
-        let base_url = self.client.base_url(self.organization);
+    pub fn list(&self, org: &str) -> Result<Vec<Agent>> {
+        let base_url = http::base_url(org);
         let url = format!("{}/agents", base_url);
         self.client.get_response(url.as_str())
     }
+
 }

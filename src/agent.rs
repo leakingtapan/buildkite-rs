@@ -11,12 +11,10 @@ pub struct ListAgents {
 }
 
 impl ListAgents {
-    pub fn run(&self, client: &buildkite::Client) {
-        //let agents = client.list_agents(self.organization.as_str());
+    pub fn run(&self, client: &buildkite::client::Client) {
         let agents = client
-            .organization(self.organization.as_str())
             .agent()
-            .list();
+            .list(self.organization.as_str());
         writer::print_json(&agents);
     }
 }

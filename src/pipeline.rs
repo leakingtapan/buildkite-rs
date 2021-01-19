@@ -11,8 +11,8 @@ pub struct ListPipelines {
 }
 
 impl ListPipelines {
-    pub fn run(&self, client: &buildkite::Client) {
-        let pipelines = client.list_pipelines(self.organization.as_str());
+    pub fn run(&self, client: &buildkite::client::Client) {
+        let pipelines = client.pipeline().list_pipelines(self.organization.as_str());
         writer::print_json(&pipelines);
     }
 }
@@ -34,8 +34,8 @@ pub struct GetPipeline {
 }
 
 impl GetPipeline {
-    pub fn run(&self, client: &buildkite::Client) {
-        let pipeline = client.get_pipeline(self.organization.as_str(), self.slug.as_str());
+    pub fn run(&self, client: &buildkite::client::Client) {
+        let pipeline = client.pipeline().get_pipeline(self.organization.as_str(), self.slug.as_str());
         writer::print_json(&pipeline);
     }
 }

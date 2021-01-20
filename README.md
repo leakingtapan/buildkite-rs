@@ -35,12 +35,7 @@ client
 // List builds for a specific pipeline
 client
     .builds()
-    .list(ctx, org_name, pipeline_name, opts);
-
-// Get a specific build for a specific pipeline
-client
-    .builds()
-    .get(ctx, org_name, pipeline_name, build_id, opts);
+    .list(org_name, pipeline_name);
 ```
 
 ## License

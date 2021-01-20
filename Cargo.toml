@@ -1,5 +1,5 @@
 [package]
-name = "buildkite"
+name = "buildkite-rs"
 version = "0.1.0"
 description = "A Rust library for Buildkite"
 authors = ["Cheng Pan <pancheng1987@gmail.com>"]

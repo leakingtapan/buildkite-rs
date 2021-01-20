@@ -3,6 +3,11 @@ name = "buildkite-cli"
 version = "0.1.0"
 description = "Example Buildkite CLI built with Buildkite Rust library"
 authors = ["Cheng Pan <pancheng1987@gmail.com>"]
+license = "Apache-2.0"
+homepage = "https://github.com/leakingtapan/buildkite-rs"
+repository = "https://github.com/leakingtapan/buildkite-rs.git"
+documentation = "https://docs.rs/buildkite-cli"
+keywords = ["buildkite"]
 edition = "2018"
 
 [dependencies]

@@ -1,10 +1,6 @@
-// This example demonstrates clap's full 'custom derive' style of creating arguments which is the
-// simplest method of use, but sacrifices some flexibility.
 use clap::Clap;
-
 mod agent;
 mod build;
-mod buildkite;
 mod organization;
 mod pipeline;
 mod writer;

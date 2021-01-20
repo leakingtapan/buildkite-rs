@@ -1,6 +1,6 @@
-use crate::buildkite::types::{Agent, Result};
-use crate::buildkite::http::HttpClient;
-use crate::buildkite::http;
+use crate::types::{Agent, Result};
+use crate::http::HttpClient;
+use crate::http;
 
 pub struct AgentService<'a> {
     pub client: &'a HttpClient,

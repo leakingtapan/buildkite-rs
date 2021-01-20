@@ -1,6 +1,6 @@
-use crate::buildkite::types::{Organization, Result};
-use crate::buildkite::http::HttpClient;
-use crate::buildkite::http;
+use crate::types::{Organization, Result};
+use crate::http::HttpClient;
+use crate::http;
 
 pub struct OrganizationService<'a> {
     /// The buildkite client

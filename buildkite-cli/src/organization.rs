@@ -1,4 +1,4 @@
-use crate::buildkite;
+use buildkite;
 use crate::writer;
 use clap::Clap;
 

@@ -1,6 +1,6 @@
-use crate::buildkite::types::{Build, Result};
-use crate::buildkite::http::HttpClient;
-use crate::buildkite::http;
+use crate::types::{Build, Result};
+use crate::http::HttpClient;
+use crate::http;
 
 pub struct BuildService<'a> {
     pub client: &'a HttpClient,

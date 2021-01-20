@@ -1,6 +1,6 @@
-use crate::buildkite::types::{Pipeline, Result};
-use crate::buildkite::http::HttpClient;
-use crate::buildkite::http;
+use crate::types::{Pipeline, Result};
+use crate::http::HttpClient;
+use crate::http;
 
 pub struct PipelineService<'a> {
     /// The buildkite client

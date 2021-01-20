@@ -1,7 +1,6 @@
 use reqwest::blocking;
 use serde::de::DeserializeOwned;
-
-use crate::buildkite::types::Result;
+use crate::types::Result;
 
 // HttpClient is for handling http requests to Buildkite API
 pub struct HttpClient {

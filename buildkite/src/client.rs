@@ -1,8 +1,8 @@
-use crate::buildkite::agent::AgentService;
-use crate::buildkite::build::BuildService;
-use crate::buildkite::http::HttpClient;
-use crate::buildkite::organization::OrganizationService;
-use crate::buildkite::pipeline::PipelineService;
+use crate::agent::AgentService;
+use crate::build::BuildService;
+use crate::http::HttpClient;
+use crate::organization::OrganizationService;
+use crate::pipeline::PipelineService;
 
 /// Client is the Buildkite API client
 pub struct Client {

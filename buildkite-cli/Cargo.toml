@@ -1,0 +1,13 @@
+[package]
+name = "buildkite-cli"
+version = "0.1.0"
+description = "Example Buildkite CLI built with Buildkite Rust library"
+authors = ["Cheng Pan <pancheng1987@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+clap = "3.0.0-beta.2"
+buildkite = { path = "../buildkite", version = "0.1.0" }
+reqwest = { version = "0.10", features = ["blocking", "json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

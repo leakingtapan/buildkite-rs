@@ -14,10 +14,16 @@ impl<'a> OrganizationService<'a> {
         }
     }
 
-    pub fn get_organizatoin(&self, org: &str) -> Result<Organization> {
-        let base_url = http::base_url(org);
+    pub fn list(&self) -> Result<Vec<Organization>> {
+        let base_url = http::base_url();
         let url = format!("{}", base_url);
         self.client.get_response(url.as_str()) 
+    }
+
+    pub fn get(&self, org: &str) -> Result<Organization> {
+        let base_url = http::org_url(org);
+        let url = format!("{}", base_url);
+        self.client.get_response(url.as_str())
     }
 
 }

@@ -13,8 +13,8 @@ impl<'a> BuildService<'a> {
         }
     }
 
-    pub fn list_builds(&self, org: &str, pipeline: &str) -> Result<Vec<Build>> {
-        let base_url = http::base_url(org);
+    pub fn list(&self, org: &str, pipeline: &str) -> Result<Vec<Build>> {
+        let base_url = http::org_url(org);
         let url = format!("{}/pipelines/{}/builds", base_url, pipeline);
         self.client.get_response(url.as_str()) 
     }

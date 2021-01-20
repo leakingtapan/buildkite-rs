@@ -1,16 +1,24 @@
 # A Rust library for Buildkite API
+A Rust binding to the Buildkite V2 API.
 
-# TODOs
-- [  ] get paginated results
-- [  ] create builkite subcommand
-- [  ] create sub cargo module
-- [  ] custom buildkite error
-- [  ] builder pattern for command chaining
-- [  ] add user agent
-
-# Examples
+## Getting Started
+First, add following to `Cargo.toml`:
+```toml
+[dependencies]
+buildkite = "0.1.0"
+```
+Then use the crate with:
 ```rust
-let client = buildkite::Client::new("BUILDKITE_TOKEN")
+use buildkite;
+
+fn main() {
+    let client = buildkite::client::Client::new("BUILDKITE_TOKEN");
+}
+```
+
+## Examples
+### Organizations
+```rust
 // List Organizations
 client
     .organizations()
@@ -20,7 +28,10 @@ client
 client
     .organizations()
     .get(ctx, org_name);
+```
 
+### Builds
+```rust
 // List builds for a specific pipeline
 client
     .builds()
@@ -31,3 +42,6 @@ client
     .builds()
     .get(ctx, org_name, pipeline_name, build_id, opts);
 ```
+
+## License
+Licensed under Apache License, Version 2.0

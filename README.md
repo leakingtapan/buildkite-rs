@@ -38,5 +38,19 @@ client
     .list(org_name, pipeline_name);
 ```
 
+### Agents
+```rust
+// List agents
+client
+    .agents()
+    .list(org_name)
+
+// Get agent
+client
+    .agents()
+    .get(org_name, agent_id)
+
+```
+
 ## License
 Licensed under Apache License, Version 2.0

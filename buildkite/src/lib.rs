@@ -1,7 +1,8 @@
-pub mod agent;
-pub mod build;
+mod agent;
+mod build;
+mod organization;
+mod pipeline;
+mod types;
+mod http;
+
 pub mod client;
-pub mod organization;
-pub mod pipeline;
-pub mod types;
-pub mod http;

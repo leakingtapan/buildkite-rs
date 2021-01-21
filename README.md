@@ -27,7 +27,7 @@ client
 // Get a sepcific organization
 client
     .organizations()
-    .get(ctx, org_name);
+    .get(org_name);
 ```
 
 ### Builds

@@ -2,7 +2,7 @@ use buildkite;
 use crate::writer;
 use clap::Clap;
 
-/// ListPipelines show all the pipelines
+/// show all the pipelines given organization
 #[derive(Clap)]
 pub struct ListPipelines {
     /// Sets the pipeline name
@@ -17,11 +17,11 @@ impl ListPipelines {
     }
 }
 
-/// UpdatePipelines updates a given pipeline
+/// updates a given pipeline
 #[derive(Clap)]
 pub struct UpdatePipeline {}
 
-/// GetPipeline get the pipeline for a given pipeline slug
+/// get the pipeline for a given pipeline slug
 #[derive(Clap)]
 pub struct GetPipeline {
     /// Sets the pipeline name

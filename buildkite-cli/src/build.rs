@@ -2,7 +2,7 @@ use buildkite;
 use crate::writer;
 use clap::Clap;
 
-/// ListBuilds lists builds for a given pipeline
+/// lists builds for a given pipeline
 #[derive(Clap)]
 pub struct ListBuilds {
     /// Sets the pipeline name

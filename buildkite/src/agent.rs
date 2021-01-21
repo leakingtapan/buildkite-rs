@@ -19,4 +19,10 @@ impl<'a> AgentService<'a> {
         self.client.get_response(url.as_str())
     }
 
+    pub fn get(&self, org: &str, agent_id: &str) -> Result<Vec<Agent>> {
+        let base_url = http::org_url(org);
+        let url = format!("{}/agents/{}", base_url, agent_id);
+        self.client.get_response(url.as_str())
+    }
+
 }

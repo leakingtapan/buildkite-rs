@@ -29,7 +29,11 @@ enum SubCommand {
 
     GetOrganization(organization::GetOrganization),
 
+    ListOrganizations(organization::ListOrganizations),
+
     ListAgents(agent::ListAgents),
+
+    GetAgent(agent::GetAgent),
 }
 
 impl SubCommand {
@@ -39,8 +43,10 @@ impl SubCommand {
             SubCommand::UpdatePipeline(_) => {}
             SubCommand::ListBuilds(c) => c.run(&client),
             SubCommand::GetOrganization(c) => c.run(&client),
+            SubCommand::ListOrganizations(c) => c.run(&client),
             SubCommand::GetPipeline(c) => c.run(&client),
             SubCommand::ListAgents(c) => c.run(&client),
+            SubCommand::GetAgent(c) => c.run(&client),
         }
     }
 }

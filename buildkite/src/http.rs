@@ -1,22 +1,22 @@
+use crate::types::Result;
 use reqwest::blocking;
 use serde::de::DeserializeOwned;
-use crate::types::Result;
+use serde::Serialize;
 
 // HttpClient is for handling http requests to Buildkite API
 pub struct HttpClient {
-
     // internal http client
     client: blocking::Client,
 
     // buildkite API token
-    token: String
+    token: String,
 }
 
 impl HttpClient {
     pub fn new(token: String) -> HttpClient {
         HttpClient {
             client: blocking::Client::new(),
-            token: token
+            token: token,
         }
     }
 
@@ -27,6 +27,15 @@ impl HttpClient {
             .bearer_auth(self.token.as_str())
             .send()?
             .json::<T>()
+    }
+
+    pub fn put<T: Serialize>(&self, url: &str, request: &T) -> Result<()> {
+        self.client
+            .put(url)
+            .json(request)
+            .bearer_auth(self.token.as_str())
+            .send()?;
+        Ok(())
     }
 }
 

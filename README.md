@@ -54,3 +54,11 @@ client
 
 ## License
 Licensed under Apache License, Version 2.0
+
+## TODOs
+- [ ]  list for paginated results
+- [ ]  custom buildkite error
+- [ ]  add user agent
+- [ ]  add marco to reduce boilerplated
+- [ ]  add unit tests
+- [ ]  add cancellation for each API
